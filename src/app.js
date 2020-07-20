@@ -29,8 +29,8 @@ class Product {
         content_type: "shoppingCart",
       });
 
-      let result = await fetch("../products.json");
-      let data = await result.json();
+      //let result = await fetch("../products.json");
+      //let data = await result.json();
       let products = contentful.items;
       products = products.map((item) => {
         const { title, price } = item.fields;
