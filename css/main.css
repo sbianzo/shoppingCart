@@ -200,6 +200,17 @@ body {
   visibility: hidden;*/
 }
 
+#top-button {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainBlack);
+  border: 1px solid var(--primaryColor);
+  float: right;
+}
+
 .cart {
   position: fixed;
   top: 0;
