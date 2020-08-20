@@ -211,6 +211,10 @@ body {
   float: right;
 }
 
+#top-button a {
+  text-decoration: none;
+}
+
 .cart {
   position: fixed;
   top: 0;
