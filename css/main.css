@@ -211,7 +211,8 @@ body {
   float: right;
 }
 
-#top-button a {
+#top-button a,
+.banner-btn a {
   text-decoration: none;
 }
 
