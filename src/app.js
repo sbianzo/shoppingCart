@@ -17,6 +17,17 @@ const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
 
+// Close modal cart
+
+[document.querySelector(".hero"), document.querySelector(".products")].forEach(
+  (item) => {
+    item.addEventListener("click", () => {
+      let ui = new UI();
+      ui.hideCart();
+    });
+  }
+);
+
 // Cart
 
 let cart = [];
