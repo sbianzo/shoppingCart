@@ -125,7 +125,7 @@ class UI {
     <img src=${item.image} alt="product" />
     <div>
       <h4>${item.title}</h4>
-      <h5>$ ${item.price} - (Total: ${item.price}*${item.amount})</h5>
+      <h5>$ ${item.price} - (Total: $ ${item.price * item.amount})</h5>
       <span class="remove-item" data-id=${item.id}>remove</span>
     </div>
     <div>
