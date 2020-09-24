@@ -125,11 +125,10 @@ class UI {
     <img src=${item.image} alt="product" />
     <div>
       <h4>${item.title}</h4>
-      <h5>$ ${item.price}</h5>
+      <h5>$ ${item.price} - (Total: ${item.price}*${item.amount})</h5>
       <span class="remove-item" data-id=${item.id}>remove</span>
     </div>
     <div>
-      <p>Total: </p>
     </div>
     <div>
       <i class="fa fa-chevron-up" data-id=${item.id}></i>
