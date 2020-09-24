@@ -129,6 +129,9 @@ class UI {
       <span class="remove-item" data-id=${item.id}>remove</span>
     </div>
     <div>
+      <p>Total: </p>
+    </div>
+    <div>
       <i class="fa fa-chevron-up" data-id=${item.id}></i>
       <p class="item-amount">${item.amount}</p>
       <i class="fa fa-chevron-down" data-id=${item.id}></i>
