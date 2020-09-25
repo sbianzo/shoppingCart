@@ -125,10 +125,10 @@ class UI {
     <img src=${item.image} alt="product" />
     <div>
       <h4>${item.title}</h4>
-      <h5>$ ${item.price} - (Total: $ ${item.price * item.amount})</h5>
+      <h5>$ ${item.price} - Partial Total: $<span class='pj' data-id-price="${
+      item.id
+    }">${item.price * item.amount}</span></h5>
       <span class="remove-item" data-id=${item.id}>remove</span>
-    </div>
-    <div>
     </div>
     <div>
       <i class="fa fa-chevron-up" data-id=${item.id}></i>
@@ -162,6 +162,10 @@ class UI {
     cart.forEach((item) => this.addCartItem(item));
   }
 
+  updatePricePartial(id, price, amount) {
+    $(`span[data-id-price=${id}]`).text(price * amount);
+  }
+
   cartLogic() {
     clearCartBtn.addEventListener("click", () => {
       this.clearCart();
@@ -181,6 +185,7 @@ class UI {
         let id = addAmount.dataset.id;
         let tempItem = cart.find((item) => item.id === id);
         tempItem.amount += 1;
+        this.updatePricePartial(id, tempItem.price, tempItem.amount);
         Storage.saveCart(cart);
         this.setCartValues(cart);
         addAmount.nextElementSibling.innerText = tempItem.amount;
@@ -192,6 +197,7 @@ class UI {
         let id = lowerAmount.dataset.id;
         let tempItem = cart.find((item) => item.id === id);
         tempItem.amount -= 1;
+        this.updatePricePartial(id, tempItem.price, tempItem.amount);
         if (tempItem.amount > 0) {
           Storage.saveCart(cart);
           this.setCartValues(cart);
